@@ -13,7 +13,6 @@ A dark colorscheme for Neovim, ported from the [Bearded Theme](https://github.co
 ## 📦 Installation
 
 ### [lazy.nvim](https://github.com/folke/lazy.nvim)
-
 ```lua
 {
   "max2000warlord/bearded-arc.nvim",
@@ -26,7 +25,6 @@ A dark colorscheme for Neovim, ported from the [Bearded Theme](https://github.co
 ```
 
 ### LazyVim
-
 ```lua
 -- lua/plugins/colorscheme.lua
 return {
@@ -41,13 +39,11 @@ return {
 ```
 
 ## 🚀 Usage
-
 ```vim
 colorscheme bearded-arc
 ```
 
 Or in Lua:
-
 ```lua
 vim.cmd([[colorscheme bearded-arc]])
 ```
@@ -62,7 +58,6 @@ vim.cmd([[colorscheme bearded-arc]])
 ```
 
 **`LICENSE`:**
-
 ```
 MIT License
 
