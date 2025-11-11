@@ -17,13 +17,8 @@ function M.setup(opts)
 	-- Load colors
 	local colors = require("bearded-arc.colors").palette
 
-	-- Apply transparency settings
-	if config.options.transparent then
-		colors.bg = "NONE"
-		colors.bg_sidebar = "NONE"
-		colors.bg_float = "NONE"
-		colors.bg_statusline = "NONE"
-	end
+	-- DON'T modify colors here - pass them as-is
+	-- Transparency is handled in the highlight groups
 
 	-- Load all highlight groups
 	local highlights = require("bearded-arc.groups").setup(colors, config.options)
