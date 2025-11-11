@@ -4,10 +4,16 @@ function M.get(colors, opts)
 	opts = opts or {}
 
 	-- Determine background colors based on transparency
-	local bg = opts.transparent and "NONE" or colors.bg
-	local bg_sidebar = opts.transparent and "NONE" or colors.bg_sidebar
-	local bg_float = opts.transparent and "NONE" or colors.bg_float
-	local bg_statusline = opts.transparent and "NONE" or colors.bg_statusline
+	local should_be_transparent = opts.transparent
+	if should_be_transparent == nil then
+		-- If not explicitly set, use NONE everywhere except Neovide
+		should_be_transparent = not vim.g.neovide
+	end
+
+	local bg = should_be_transparent and "NONE" or colors.bg
+	local bg_sidebar = should_be_transparent and "NONE" or colors.bg_sidebar
+	local bg_float = should_be_transparent and "NONE" or colors.bg_float
+	local bg_statusline = should_be_transparent and "NONE" or colors.bg_statusline
 
 	return {
 		-- Editor UI

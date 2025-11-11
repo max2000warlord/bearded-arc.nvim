@@ -17,9 +17,6 @@ function M.setup(opts)
 	-- Load colors
 	local colors = require("bearded-arc.colors").palette
 
-	-- DON'T modify colors here - pass them as-is
-	-- Transparency is handled in the highlight groups
-
 	-- Load all highlight groups
 	local highlights = require("bearded-arc.groups").setup(colors, config.options)
 

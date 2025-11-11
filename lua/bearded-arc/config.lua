@@ -1,25 +1,19 @@
 local M = {}
 
 M.options = {
-	transparent = false,
-	transparent_sidebar = false, -- Only make sidebars transparent
+	transparent = true, -- Changed from false - now respects terminal opacity by default
+	transparent_sidebar = false,
 	terminal_colors = true,
-	dim_inactive = false, -- Dim inactive windows
+	dim_inactive = false,
 	styles = {
 		comments = { italic = true },
 		keywords = { italic = false },
 		functions = {},
 		variables = {},
-		sidebars = "dark", -- "dark", "transparent", "normal"
-		floats = "dark", -- "dark", "transparent", "normal"
+		sidebars = "dark",
+		floats = "dark",
 	},
 	sidebars = { "qf", "help", "vista_kind", "terminal", "packer" },
 	hide_inactive_statusline = false,
 	lualine_bold = false,
 }
-
-function M.setup(opts)
-	M.options = vim.tbl_deep_extend("force", M.options, opts or {})
-end
-
-return M
